@@ -56,7 +56,6 @@ let revWords2 = (str) => {
   return result;
 };
 
-
 //3C
 //forIn/Of loop
 
@@ -68,15 +67,15 @@ function wordRev(r) {
   }
   return joinArr;
 }
+let revWords3 = (str) => {
+  let arrayW = str.split(" "),
+  result ="";
 
-let revWord3 = (str) => {
-  let arr = str.split("");
-    let result = "";
-
-  for (item of arr) {
+  for (item of arrayW) {
     let current = item;
-    let wordReversed = wordRev(current);
-    result = result + wordRev + " ";
+    let reversedW = wordRev(current);
+
+      result = result + reversedW + " ";
   }
-  return result;
+  return result
 };
