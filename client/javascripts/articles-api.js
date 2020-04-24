@@ -1,6 +1,6 @@
 // jshint esversion: 6
 
-let controller = function(){
+let main = function() {
 /*
     let prefixURL = "https://api.flickr.com/services/feeds/photos_public.gne?tags=";
     let suffixURL = "&format=json&jsoncallback=?";
@@ -11,11 +11,12 @@ let controller = function(){
     let flickrTag = $("input").val();
     console.log(flickrTag);
   */
+  console.log("response");
 
     let requestURL = 'https://thejsway-server.herokuapp.com/api/articles';
     console.log(requestURL);
     //clear old photos - read book
-   document.querySelector(".photos").innerHTML = "";
+   document.querySelector(".articles").innerHTML = "";
     //$(".photos").????("");
 
   $.getJSON(requestURL, function(response) {
@@ -24,17 +25,14 @@ let controller = function(){
     Title: $[firstArticle.title]
     Content: $[firstArticle.content]`);
 
-    let articlesElement = document.getElementsByClassName("articles")
-
-    response.forEach(functions(item, index) {
+    response.forEach(function(item, index) {
       let newDiv = document.createElement("div");
       document.querySelector(".articles").appendChild(newDiv);
-
       let newH3 = document.createElement("h3");
       newH3.textContent = `Article ${item.id}`;
       newDiv.appendChild(newH3);
 
-      let titleParagraph = document.createelemnt("p");
+      let titleParagraph = document.createElement("p");
       titleParagraph.textContent = item.title;
       newDiv.appendChild(titleParagraph);
 
@@ -42,7 +40,11 @@ let controller = function(){
       bodyParagraph.textContent = item.content;
       newDiv.appendChild(bodyParagraph);
 
-    }
+});
+    let articlesElement = document.getElementsByClassName("articles");
+});
+
+
 
 
 
@@ -70,19 +72,19 @@ let controller = function(){
   }
 );
 */
-)};
+};
 
 
-//$(document).ready(controller);
+$(document).ready(main);
 
 
 
 //Register the controller after the DOM is complete
-window.addEventListener("load", () => {
+// window.addEventListener("load", ( ) => {
   //select the button
-  let button = document.querySelector("button");
+  // let button = document.querySelector("button");
 
 
   //register the click handler for the button
-  button.addEventListener("click", controller);
-});
+  // button.addEventListener("click", main);
+// });

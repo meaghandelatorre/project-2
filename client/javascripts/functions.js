@@ -19,6 +19,14 @@ let containsDuplicates = s => {
 //3A
 //for loop
 //write a reverseOneWord function
+function wordRev(r) {
+  let string = r.split("");
+  let reversedArr = string.reverse();
+  let joinArr = reversedArr.join("");
+  for (var i = 0; i < r.length; i++) {
+  }
+  return joinArr;
+}
 let revWords1 = (str) => {
   let result= "";
   for (var i = 0; i < str.length; i++) {
@@ -51,11 +59,24 @@ let revWords2 = (str) => {
 
 //3C
 //forIn/Of loop
+
+function wordRev(r) {
+  let string = r.split("");
+  let reversedArr = string.reverse();
+  let joinArr = reversedArr.join("");
+  for (var i = 0; i < r.length; i++) {
+  }
+  return joinArr;
+}
+
 let revWord3 = (str) => {
   let arr = str.split("");
-  let result = "";
-  for (char of arr) {
-    result = char + result;
+    let result = "";
+
+  for (item of arr) {
+    let current = item;
+    let wordReversed = wordRev(current);
+    result = result + wordRev + " ";
   }
   return result;
 };
