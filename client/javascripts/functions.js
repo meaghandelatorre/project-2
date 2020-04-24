@@ -25,12 +25,18 @@ function wordRev(r) {
   let joinArr = reversedArr.join("");
   for (var i = 0; i < r.length; i++) {
   }
+
   return joinArr;
 }
-let revWords1 = (str) => {
-  let result= "";
-  for (var i = 0; i < str.length; i++) {
-    result = str[i] + result;
+
+let revWords1 = (m) => {
+  let arrayW = m.split(" "),
+    result = "";
+
+  for(var i = 0; i < arrayW.length; i++) {
+    let currentW = arrayW[i];
+    let wordRevd = wordRev(currentW);
+    result = result + " " + wordRevd;
   }
   return result;
 };
