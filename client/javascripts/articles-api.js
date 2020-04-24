@@ -10,15 +10,16 @@ let controller = function(){
 
     let flickrTag = $("input").val();
     console.log(flickrTag);
-    let requestURL = prefixURL + flickrTag + suffixURL;
+    let requestURL = 'https://thejsway-server.herokuapp.com/api/articles';
     console.log(requestURL);
     //clear old photos - read book
    document.querySelector(".photos").innerHTML = "";
     //$(".photos").????("");
 
   $.getJSON(requestURL, function(flickrResponse) {
-    flickrResponse.items.forEach(function(item, index) {
 
+    flickrResponse.items.forEach(function(item, index) {
+/*
       //Flickr returns 20 images by default
       //We need only six images for the Gallery
       if (index < 6) {
@@ -38,7 +39,8 @@ let controller = function(){
       }
     });
 
-  });
+*/  }
+);
 };
 
 
