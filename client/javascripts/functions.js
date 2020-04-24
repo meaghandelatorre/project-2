@@ -1,5 +1,6 @@
 // jshint esversion: 6
 
+//extra credit
 let containsDuplicates = s => {
   let cArr = [0, 0, 0, 0],
     code;
@@ -28,14 +29,25 @@ let revWords1 = (str) => {
 
 //3B
 //forEach method
+function wordRev(r) {
+  let string = r.split("");
+  let reversedArr = string.reverse();
+  let joinArr = reversedArr.join("");
+  for (var i = 0; i < r.length; i++) {
+  }
+  return joinArr;
+}
 let revWords2 = (str) => {
-  let arr = str.split("");
-  let result = "";
-    arr.forEach((char) => {
-    result = char + result;
+  let arrayW = str.split(" "),
+  result = "";
+  arrayW.forEach(function(item) {
+    let current = item;
+    let wordReversed = wordRev(current);
+      result = result + wordReversed + " ";
   });
   return result;
 };
+
 
 //3C
 //forIn/Of loop
